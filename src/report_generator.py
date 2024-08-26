@@ -44,7 +44,7 @@ class ReportGenerator:
 
     def generate_daily_report(self, markdown_file_path):
         # 读取Markdown文件并使用LLM生成日报
-        with open(markdown_file_path, 'r') as file:
+        with open(markdown_file_path, 'r', encoding='utf-8') as file:
             markdown_content = file.read()
 
         report = self.llm.generate_daily_report(markdown_content)  # 调用LLM生成报告
