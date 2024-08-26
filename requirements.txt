@@ -4,4 +4,4 @@ gradio
 loguru
 python-daemon
 beautifulsoup4 
-asyncio
+schedule
