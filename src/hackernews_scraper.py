@@ -38,6 +38,18 @@ class HackerNewsScraper:
         
         return stories
 
+    def top_stories(self):
+        return self.fetch_top_stories()
+    
+    def top_stories_summarize(self):
+        """获取 Hacker News 热门帖子并生成总结."""
+        titles = self.fetch_top_stories()
+        # 将标题格式化为Markdown风格
+        markdown_content = "\n".join(f"- [{story['title']}]({story['link']})" for story in titles)
+
+        return self.summary_generator.generate_daily_report(markdown_content)  # 调用HackerNewsSummary生成总结
+    
+    
     def write_to_file(self, content):
         """将获取到的内容写入指定的文件."""
         # 创建目标文件夹（如果不存在）

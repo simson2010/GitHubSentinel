@@ -1,5 +1,6 @@
 import os
 import json
+from datetime import datetime
 from openai import OpenAI  # 导入OpenAI库用于访问GPT模型
 from logger import LOG  # 导入日志模块
 
@@ -31,6 +32,7 @@ class HackerNewsSummary:
         """生成每日报告，支持干运行模式."""
         messages = [
             {"role": "system", "content": self.system_prompt},
+            {"role": "user", "content": f"Today is {datetime.now().date()}, and here's the daily progress: "},
             {"role": "user", "content": markdown_content},
         ]
 
@@ -38,7 +40,7 @@ class HackerNewsSummary:
             return self.handle_dry_run(messages)
 
         LOG.info("Starting report generation using GPT model.")
-        
+        LOG.info(messages)
         try:
             response = self.client.chat.completions.create(
                 model="gpt-4o-mini",  # 指定使用的模型版本
