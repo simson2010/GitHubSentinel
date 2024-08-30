@@ -1,9 +1,14 @@
 {
-    "github_token": "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",
+    "github_token": "your_github_token",
     "notification_settings": {
         "email": "your_email@example.com",
         "slack_webhook_url": "your_slack_webhook_url"
     },
     "subscriptions_file": "subscriptions.json",
-    "update_interval": 86400
+    "update_interval": 86400,
+    "use_local_model": { 
+        "enabled": true,
+        "base_url": "http://localhost:11434/v1/",
+        "model":"llama3.1"
+    }
 }
