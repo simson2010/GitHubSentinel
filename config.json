@@ -5,5 +5,10 @@
         "slack_webhook_url": "your_slack_webhook_url"
     },
     "subscriptions_file": "subscriptions.json",
-    "update_interval": 86400
+    "update_interval": 86400,
+    "use_local_model": {
+        "enabled": true,
+        "base_url": "http://localhost:11434/v1/",
+        "model":"llama3.1"
+    }
 }
