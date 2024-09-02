@@ -68,7 +68,7 @@ class ReportGenerator:
         with open(report_file_path, 'w+', encoding='utf-8') as report_file:
             report_file.write(report)
 
-        LOG.info(f"Hacker News 热点主题报告已保存到 {report_file_path}")
+        LOG.info(f"CSDN 热点主题报告已保存到 {report_file_path}")
         return report, report_file_path
         
 
