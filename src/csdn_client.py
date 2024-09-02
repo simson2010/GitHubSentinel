@@ -29,7 +29,7 @@ class CSDNClient:
             driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
             driver.get(self.url)  # 打开指定的URL
             self.driver = driver 
-            time.sleep(10)  # 等待页面加载完成（10秒
+            time.sleep(2)  # 等待页面加载完成（10秒
             # 获取页面源码
             html_content = driver.page_source
             
