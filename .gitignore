@@ -170,3 +170,4 @@ run/*
 test_results.txt
 prompts/*_bak.txt
 nohup.out
+csdn_articles
